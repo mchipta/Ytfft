@@ -1129,6 +1129,71 @@ html.nohs .hs{display:none}
 .msw .mdel { position: absolute; top:0; bottom:0; right:0; width: 50%; display: flex; align-items: center; justify-content: flex-end; padding-right: 22px; background: var(--dng); color: #fff; font-weight: 700; z-index: 0;}
 .msw::before { content: 'В архив'; position: absolute; top:0; bottom:0; left:0; width: 50%; display: flex; align-items: center; justify-content: flex-start; padding-left: 22px; background: var(--ok); color: #fff; font-weight: 700; z-index: 0; border: none !important;}
 .msw .mrow { position: relative; z-index: 1; }
+
+/* v6 Search Bar */
+main.page.feed .sbar { background: none; border: none; box-shadow: none; padding: 0; height: 52px; gap: 10px; margin-bottom: 16px; border-radius: 0; }
+.sbx { flex: 1; display: flex; align-items: center; gap: 8px; height: 52px; padding: 0 16px; background: var(--c); border: 1px solid var(--bd); border-radius: 26px; }
+.sbx input { flex: 1; border: none; background: transparent; outline: none; font-size: 16px; color: var(--tx); }
+.sbf { width: 52px; height: 52px; border-radius: 50%; background: var(--c); border: 1px solid var(--bd); display: grid; place-items: center; color: var(--tx); position: relative; cursor: pointer; flex: none; }
+.sbf.act { background: linear-gradient(120deg, var(--ac), var(--ac2)); color: #fff; border-color: transparent; }
+.sbf .dot { position: absolute; top: -4px; right: -4px; background: var(--tx); color: var(--bg); border: 2px solid var(--c); font-size: 11px; font-weight: 800; border-radius: 99px; padding: 0 6px; height: 20px; line-height: 16px; font-style: normal; }
+
+/* v6 Categories */
+main.page.feed .cats { gap: 6px; padding: 0 16px 8px; }
+.cc { flex: none; width: 74px; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 0; background: none !important; border: none !important; color: var(--tx) !important; font-size: 11.5px; font-weight: 600; text-align: center; white-space: normal; line-height: 1.2; box-shadow: none !important; }
+.cc span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cc .ic { width: 56px; height: 56px; padding: 14px; border-radius: 50%; background: color-mix(in srgb, var(--h, var(--ac)) 15%, var(--c)); color: var(--h, var(--ac)); box-sizing: border-box; transition: transform 0.2s; }
+.cc.on .ic { background: linear-gradient(120deg, var(--ac), var(--ac2)); color: #fff; box-shadow: 0 6px 14px color-mix(in srgb, var(--ac) 30%, transparent); transform: translateY(-2px); }
+.cc[data-ci="0"], .card.ad2[data-ci="0"] { --h: #f08a24; }
+.cc[data-ci="1"], .card.ad2[data-ci="1"] { --h: #2f9bff; }
+.cc[data-ci="2"], .card.ad2[data-ci="2"] { --h: #a26bff; }
+.cc[data-ci="3"], .card.ad2[data-ci="3"] { --h: #22b573; }
+.cc[data-ci="4"], .card.ad2[data-ci="4"] { --h: #e8508f; }
+.cc[data-ci="5"], .card.ad2[data-ci="5"] { --h: #14b8c4; }
+
+/* v6/v9 Card */
+#ads.vm0 .card.ad2 { border-radius: 20px; padding: 12px; gap: 12px; align-items: center; }
+#ads.vm0 .card.ad2 .cth { width: 90px; height: 90px; border-radius: 12px; }
+#ads.vm0 .card.ad2 .cth.ph { background: color-mix(in srgb, var(--h, var(--ac)) 12%, var(--c)); color: var(--h, var(--ac)); border: none; }
+#ads.vm0 .card.ad2 .ctg { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; margin-bottom: 2px; }
+#ads.vm0 .card.ad2 .ctg .tag { background: none; border: none; padding: 0; font-size: 12.5px; color: var(--mu); }
+#ads.vm0 .card.ad2 .ctg .tag.w::before { content: "●"; color: var(--ac); margin-right: 4px; }
+#ads.vm0 .card.ad2 .ctg .tag.s::before { content: "●"; color: var(--ok); margin-right: 4px; }
+#ads.vm0 .card.ad2 .ctg .cchip { background: none; border: none; padding: 0; font-size: 12.5px; color: var(--mu); }
+#ads.vm0 .card.ad2 .ctg .cchip .ic { display: none; }
+#ads.vm0 .card.ad2 .ctg .cchip::before { content: "·"; margin: 0 4px; }
+#ads.vm0 .card.ad2 h4 { font-size: 15.5px; margin: 2px 0; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; white-space: normal; }
+#ads.vm0 .card.ad2 .pay { font-size: 18px; font-weight: 800; color: var(--tx); background: none; padding: 0; margin-top: 2px; }
+#ads.vm0 .card.ad2 .pay.neg { font-size: 15px; color: var(--mu); }
+#ads.vm0 .card.ad2 .cmeta { font-size: 12.5px; display: flex; align-items: center; gap: 4px; flex-wrap: nowrap; margin-top: 2px; }
+#ads.vm0 .card.ad2 .cmeta .ic { display: none; }
+#ads.vm0 .card.ad2 .cml { min-width: 0; overflow: hidden; text-overflow: ellipsis; flex: none; max-width: 50%; }
+
+/* v9 Filter Loc */
+.fgeo { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg2); border-radius: 16px; border: 1px solid var(--bd); cursor: pointer; }
+.fgeo b { font-size: 16px; color: var(--tx); }
+.fgeo .gsw { width: 44px; height: 26px; border-radius: 99px; background: var(--bd); position: relative; transition: 0.2s; flex: none; }
+.fgeo .gsw::after { content: ""; position: absolute; left: 3px; top: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: 0.2s; }
+.fgeo.on .gsw { background: var(--ok); }
+.fgeo.on .gsw::after { left: 21px; }
+
+/* v9 Profile Stats */
+.cstat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }
+.cstat > div { background: var(--card); border: 1px solid var(--bd); border-radius: 16px; padding: 12px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.cstat .ic { width: 24px; height: 24px; color: var(--mu); }
+.cstat b { font-size: 22px; font-weight: 900; line-height: 1; }
+.cstat span { font-size: 12px; color: var(--mu); }
+
+/* Owner Panel */
+.own-pan { display: grid; gap: 8px; margin-top: 12px; }
+.own-pan .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.own-pan .btn { min-height: 44px; border-radius: 14px; font-size: 14px; justify-content: center; }
+
+/* Filter modal adjustments */
+.fsh { border-radius: 24px 24px 0 0; padding: 16px 16px 90px; }
+.fhd h3 { font-size: 20px; }
+.fch button { border-radius: 12px; font-size: 14px; padding: 10px 16px; border: 1px solid var(--bd); background: var(--c); color: var(--tx); font-weight: 600; }
+.fch button.on { background: color-mix(in srgb, var(--ac) 12%, var(--c)); border-color: var(--ac); color: var(--ac); }
 </style>
 </head><body><script>try{if(sessionStorage.getItem("gi"))document.documentElement.classList.add("noi")}catch(e){}</script><div id="intro" aria-hidden="true"><div class="intb"><div class="intl"><svg viewBox="0 0 24 24"><path d="M8 12l3 3 5-6"/></svg></div><div class="intt">Дело<span class="gt">Есть</span></div></div></div><script>try{sessionStorage.setItem("gi","1")}catch(e){}(function(){var i=document.getElementById("intro"),v=window.visualViewport;function f(){if(!i||!v)return;i.style.inset="auto";i.style.left=v.offsetLeft+"px";i.style.top=v.offsetTop+"px";i.style.width=v.width+"px";i.style.height=v.height+"px"}f();if(v)v.addEventListener("resize",f)})();setTimeout(function(){var i=document.getElementById("intro");if(i)i.remove()},1300)</script>
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -1516,7 +1581,16 @@ function rv(){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isInterse
 function cnt(el){const n=+el.dataset.n,t0=performance.now(),f=t=>{const p=Math.min(1,(t-t0)/1300);el.textContent=Math.round(n*p).toLocaleString('ru')+'+';if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
 const cic=c=>(CATS.find(x=>x[0]===c)||[0,'more'])[1],cchip=(c,lg)=>`<span class="cchip${lg?' lg':''}">${ico(cic(c))}${esc(c)}</span>`;
 const payC=v=>/\d/.test(payF(v)||'')?'':' neg',tabsOn=()=>{const t=document.getElementById('tabs');return !!t&&getComputedStyle(t).display!=='none'};
-const card=x=>{const im=x.imgs&&x.imgs[0];return `<article class="card ad2 rv" data-t="${x.type===TYPES[0]?0:1}" data-ci="${Math.max(0,CN.indexOf(x.category))%6}" onclick="show('${x.id}')"><div class="cth${im?'':' ph'}">${im?`<img src="${IMG(x.imgs[0],300)}" alt="" loading="lazy">${x.imgs.length>1?`<span class="cn">${ico('camera')}${x.imgs.length}</span>`:''}`:ico(cic(x.category))}</div><div class="cbd"><div class="chd"><div class="ctg"><span class="tag ${x.type===TYPES[0]?'w':'s'}">${esc(x.type)}</span>${x.urgent?'<span class="tag urg">Срочно</span>':''} ${cchip(x.category)}</div>${U?`<button class="fv${FV.includes(x.id)?' on':''}" data-id="${x.id}" aria-label="В избранное" onclick="event.stopPropagation();fav('${x.id}')">${ico('heart')}</button>`:''}</div><div class="pay${payC(adPay(x))}">${payH(adPay(x))}</div><h4>${esc(x.title)}</h4>${adMeta(x)}<div class="mu cmeta">${ico('pin')}<span class="cml">${esc(locStr(x))||'Город не указан'}</span>${dstB(x)}<span class="cmt"> · ${dtS(x.up||x.ts)}</span></div></div></article>`};
+const card=x=>{const im=x.imgs&&x.imgs[0];
+return `<article class="card ad2 rv" data-t="${x.type===TYPES[0]?0:1}" data-ci="${Math.max(0,CN.indexOf(x.category))%6}" onclick="show('${x.id}')">
+<div class="cth${im?'':' ph'}">${im?`<img src="${IMG(x.imgs[0],300)}" alt="" loading="lazy">`:ico(cic(x.category))}</div>
+<div class="cbd">
+  <div class="ctg"><span class="tag ${x.type===TYPES[0]?'w':'s'}">${esc(x.type)}</span> ${cchip(x.category)}</div>
+  <div class="pay${payC(adPay(x))}">${esc(adPay(x))}</div>
+  <h4>${esc(x.title)}</h4>
+  <div class="mu cmeta"><span class="cml">${esc(locStr(x))||'Город не указан'}</span><span class="cmt">· ${dtS(x.up||x.ts)}</span></div>
+</div>
+</article>`};
 const REV=[['Сергей, 34','Мастер на все руки','За выходные нашёл три заказа на ремонт. Платят сразу, договариваемся напрямую, без посредников и комиссий.'],['Ольга, 41','Владелица кофейни','Срочно нужен был курьер на вечер. Разместила объявление и через час уже было четыре отклика.'],['Артём, 21','Студент, репетитор','Подрабатываю по вечерам. За полгода набрал двадцать учеников, и все пришли через ДелоЕсть.']],
 FAQ=[['Это бесплатно?','Да. Регистрация, размещение объявлений и отклики бесплатны. Мы не берём комиссию с заказов, вы договариваетесь и рассчитываетесь напрямую.'],['Как мне не нарваться на обман?','Читайте описание, уточняйте детали до начала работы, не вносите предоплату незнакомым людям и встречайтесь в людных местах. Подозрительные объявления можно отправить жалобой на объявление.'],['Как быстро появится моё объявление?','Сразу после публикации. Его видят все посетители, а контакты показываются зарегистрированным пользователям.'],['Можно ли и искать работу, и искать исполнителей?','Да. Один аккаунт подходит для обоих случаев: выбирайте тип объявления «Нужен исполнитель» или «Предлагаю услуги».'],['Как снять объявление?','Откройте раздел «Объявления» и нажмите «Снять с публикации». Позже его можно опубликовать снова.']];
 let HM=0;
@@ -1535,7 +1609,19 @@ ${U?'':`<section class="sec" id="how"><div class="in"><h2>Как это рабо
  await loadAds(()=>{const l=$('#lat');if(l){l.innerHTML=ADS.filter(a=>!isBlk(a.pid)).slice().sort((a,b)=>b.ts-a.ts).slice(0,U?6:4).map(card).join('')||'<p class="mu" style="text-align:center;grid-column:1/-1">Пока нет объявлений. Станьте первым!</p>';rv()}})}
 
 let LASTN=0;
-async function vList(){PG=12;$('#app').innerHTML=`<main class="page feed"><div class="sbar"><div class="sbx"><span class="sbi">${ico('search')}</span><input id="q" data-smart data-tw type="search" enterkeyhint="search" placeholder="Найти подработку или услугу" autocomplete="off" value="${esc(F.q)}"></div><button type="button" class="sbf" id="fbtn" aria-label="Фильтры" onclick="fOpen()">${ico('sliders')}<i class="dot" hidden></i></button></div><div class="cats" id="feed-cats"></div><div class="row" style="margin:6px 0 10px"><span id="cnt" class="mu"></span><span id="ssb" style="margin-left:auto;margin-right:8px"></span><div class="vmt" id="vmt"></div></div><div id="ads" class="gr one vm${LVM}" style="--n:2">${skelAd(6)}</div><div id="more" style="text-align:center;margin-top:16px"></div></main>`;
+async function vList(){PG=12;$('#app').innerHTML=`<main class="page feed">
+<div class="sbar">
+  <div class="sbx">
+    <span class="sbi">${ico('search')}</span>
+    <input id="q" type="search" placeholder="Найти подработку или услугу" autocomplete="off" value="${esc(F.q)}">
+  </div>
+  <button type="button" class="sbf" id="fbtn" aria-label="Фильтры" onclick="fOpen()">${ico('sliders')}<i class="dot" hidden></i></button>
+</div>
+<div class="cats" id="feed-cats"></div>
+<div class="row" style="margin:4px 0 12px"><span id="cnt" class="mu" style="font-size:14px;font-weight:600"></span><span id="ssb" style="margin-left:auto;margin-right:8px"></span><div class="vmt" id="vmt"></div></div>
+<div id="ads" class="gr one vm${LVM}" style="--n:2">${skelAd(6)}</div>
+<div id="more" style="text-align:center;margin-top:16px"></div>
+</main>`;
  $('#q').oninput=()=>{F.q=$('#q').value;PG=12;draw()};fChips();
  await loadAds(draw);geoAuto();geoFill()}
 const CSH={'Строительство и ремонт':'Стройка и ремонт','Репетиторство':'Репетиторы'};
@@ -1558,7 +1644,7 @@ function fOvChips(){if(!FD)return;const c=$('#fo-cats'),t=$('#fo-types'),pt=$('#
  fdGeo()}
 const whereTitle=()=>FD.city?FD.city:(GEO?'Рядом со мной':'Все города');
 const whereSub=()=>{const r=+FD.rad||0;if(!FD.city)return GEO?(r?'В радиусе '+r+' км от вас':'Ближайшие — первыми'):'Выбрать город или регион';if(!r)return'Только этот город';return FD.first!==false?'И в радиусе '+r+' км, сначала из города':'И в радиусе '+r+' км вместе'};
-function fdGeo(){if(!FD)return;const g=$('#fo-where');if(g)g.innerHTML=`<button type="button" class="fwh" onclick="whereOpen()">${ico('pin')}<span><b>${esc(whereTitle())}</b><small>${esc(whereSub())}</small></span><i class="lch">›</i></button>`;whereRender()}
+function fdGeo(){if(!FD)return;const g=$('#fo-where');if(g)g.innerHTML=`<div class=\"fgeo\" onclick=\"fdLoc()\"><b>Рядом со мной</b><i class=\"gsw${GEO?' on':''}\"></i></div><div class=\"rchips\" id=\"wo-rad\"></div>`;setTimeout(()=>{$('#wo-rad').innerHTML=rgnMore()},10);whereRender()}
 function geoOff(){GEO=null;try{localStorage.removeItem('gig_pos');localStorage.setItem('gig_geooff','1')}catch(e){}geoBtn(0)}
 async function fdLoc(){vib(12);if(GEO){geoOff();if(FD){FD.rad='';if(FD.sort==='near')FD.sort='';if(GAC&&FD.city===GAC){FD.city='';FD.ctr=null;const i=$('#wo-city');if(i)i.value=''}}GAC='';GAT=0;fOvChips();fdCnt();return}const b=document.querySelector('#wo-geo .fgeo');if(b)b.classList.add('ld');await geoNow(1);if(GEO&&FD){FD.sort='';toast('Показываем ближайшие',0,'Сначала самые близкие к вам')}fOvChips();fdCnt();if(GEO&&FD)fdCityAuto()}
 /* Экран «Где искать»: город, «Сначала из города», радиус на карте */
@@ -1628,10 +1714,22 @@ async function vAd(){let x=ADS.find(a=>a.id===AID);if(!x||(U&&!ADF)){try{ADS=(aw
  if(!x){const ab=$('#adbar');if(ab){ab.hidden=true;ab.innerHTML=''}$('#app').innerHTML=`<main class="page ad" style="padding-top:20px!important">${bk}<div class="emp">Объявление не найдено или уже снято</div></main>`;return}
  document.title=x.title+' — ДелоЕсть';const mine=U&&x.pid===U.pid;
  const bar=!!(U&&x.pid&&!mine&&(!x.status||x.status==='open'));
- $('#app').innerHTML=`<main class="page ad${bar?' hb':''}"><article class="ad-h"><div class="ad-nav"><button type="button" class="gbtn back-ic" aria-label="Назад" title="Назад" onclick="PREV&&history.length>1?history.back():go('list')">${ico('arrow')}</button><div class="ad-nav-r"><button type="button" class="gbtn fv${FV.includes(x.id)?' on':''}" data-id="${x.id}" aria-label="В избранное" title="В избранное" onclick="${U?`fav('${x.id}')`:`toast('Войдите, чтобы добавить в избранное',1);go('cab')`}">${ico('heart')}</button><button type="button" class="gbtn" aria-label="Ещё" title="Ещё" onclick="advMenu(event)">${ico('morev')}</button></div></div><div class="mnu" id="mnu" hidden>${mine?`<button type="button" onclick="$('#mnu').hidden=true;editMine('${x.id}')">${ico('edit')}Изменить</button>${x.status==='hidden'?'':`<button type="button" onclick="$('#mnu').hidden=true;adMine('status','${x.id}','${x.status==='open'?'closed':'open'}')">${ico(x.status==='open'?'eyeoff':'pub')}${x.status==='open'?'Снять с публикации':'Опубликовать'}</button>`}${x.status==='open'?`<button type="button" onclick="$('#mnu').hidden=true;adMine('urgent','${x.id}',${x.urgent?'false':'true'})">${ico('spark')}${x.urgent?'Снять «Срочно»':'Отметить «Срочно»'}</button>`:''}`:''}<button type="button" onclick="$('#mnu').hidden=true;shareSheet('${x.id}')">${ico('send')}Поделиться</button>${mine?'':`<button type="button" onclick="$('#mnu').hidden=true;repSheet('${x.id}','Пожаловаться')">${ico('alert')}Пожаловаться</button>`}</div>${adCover(x)}<div class="tg"><span class="tag ${x.type===TYPES[0]?'w':'s'}">${esc(x.type)}</span> ${cchip(x.category,1)}${x.urgent?'<span class="tag urg">Срочно</span>':''}${x.status&&x.status!=='open'?chip(x.status):''}</div><h1>${esc(x.title)}</h1><div class="ad-pay${payC(adPay(x))}">${payH(adPay(x))}</div>${adFacts(x)}${adLocLine(x)}<div class="meta"><span>${ico('clock')}${dt(x.ts)}</span><span>${ico('eye')}<b id="opn">${x.opens||0}</b>&nbsp;просмотров</span></div><h3 class="ad-t">Описание</h3><p class="ad-d">${esc(x.desc)}</p></article>
- <div class="ad-s">
+const sc=({open:['Активно','ok'],closed:['Снято','mu'],hidden:['Скрыто','er']})[x.status]||[x.status,'mu'];
+const ownPan=mine?`<div class="sc own-pan">
+  <div class="mst"><span class="st2 ${sc[1]}">${sc[0]}</span><span class="mss" style="margin-left:auto;display:flex;gap:12px"><span title="Просмотры">${ico('eye')}${x.opens||0}</span><span title="Открыли телефон">${ico('phone')}${x.views||0}</span></span></div>
+  <div class="row2">
+    ${x.status==='open'||x.status==='hidden'?`<button type="button" class="btn" onclick="editAd('${x.id}')">${ico('edit')}Изменить</button>`:''}
+    ${x.status==='open'?`<button type="button" class="btn" style="color:var(--dng)" onclick="adMine('status','${x.id}','closed')">${ico('eyeoff')}Снять</button>`:''}
+    ${x.status!=='open'&&x.status!=='hidden'?`<button type="button" class="btn" style="color:var(--ok)" onclick="adMine('status','${x.id}','open')">${ico('pub')}Опубликовать</button>`:''}
+  </div>
+  ${x.status==='open'?`<div class="row2">
+    <button type="button" class="btn" onclick="adAct('bump','${x.id}','Поднято в поиске')">${ico('arrow')}Поднять</button>
+    <button type="button" class="btn${x.urgent?' on':''}" onclick="adAct('urgent','${x.id}','${x.urgent?'Метка снята':'Срочно на 3 дня'}',${x.urgent?'false':'true'})">${ico('spark')}Срочно</button>
+  </div>`:''}
+</div>`:''
+<div class="ad-s">
  <a class="sc prl" onclick="go('u','${x.pid}')"><div class="who"><span class="av sm" id="aav">${ini(x.author)}</span><div><b>${esc(x.author)}</b>${x.ver?`<span class="vb" onclick="vInfo(event)">${VERI}Подтверждённый</span>`:''}<div class="mu sm2">${x.rc?`<span class="stars">★</span> ${x.rt.toFixed(1)} · ${x.rc} ${pl(x.rc)}`:'Пока нет отзывов'}</div></div></div></a>
-${mine?`<div class="sc"><span class="mu">Это ваше объявление. Управлять им и откликами можно в разделе «Объявления».</span></div>`:x.status&&x.status!=='open'?`<div class="sc"><span class="mu">Объявление закрыто автором</span></div>`:!U?`<div class="sc" style="text-align:center;justify-items:center"><b>Контакты скрыты</b><span class="mu">Войдите, чтобы увидеть телефон автора, написать ему и откликнуться на объявление.</span><button class="btn pri" style="width:100%" onclick="go('cab')">Войти</button></div>`:''}</div></main>`;
+${mine?ownPan:x.status&&x.status!=='open'?`<div class="sc"><span class="mu">Объявление закрыто автором</span></div>`:!U?`<div class="sc" style="text-align:center;justify-items:center"><b>Контакты скрыты</b><span class="mu">Войдите, чтобы увидеть телефон автора, написать ему и откликнуться на объявление.</span><button class="btn pri" style="width:100%" onclick="go('cab')">Войти</button></div>`:''}</div></main>`;
  const ab=$('#adbar');if(ab){if(bar){ab.innerHTML=adBar(x);ab.hidden=false}else{ab.hidden=true;ab.innerHTML=''}}countOpen(x)}
 const adFacts=x=>{const r=[];if(adWhenL(x))r.push([x.type===TYPES[0]?'Когда нужно':'Когда могу',adWhenL(x),'clock']);if(x.dur)r.push(['Сколько по времени',x.dur,'clock']);if(+x.need>1)r.push(['Нужно людей',String(x.need),'user']);return r.length?`<div class="facts2">${r.map(f=>`<div>${ico(f[2])}<span>${f[0]}</span><b>${esc(f[1])}</b></div>`).join('')}</div>`:''};
 const adBar=x=>`<button type="button" class="abq" aria-label="Написать" title="Написать" onclick="go('chat','${x.pid}_${x.id}')">${ico('chat')}</button>${x.phone?`<button type="button" class="abq" aria-label="Позвонить" title="Позвонить" onclick="callAd('${x.id}')">${ico('phone')}</button>`:''}<button type="button" class="btn pri" id="rpb" onclick="reply('${x.id}')">${ico('sendr')}Откликнуться</button>`;
@@ -1774,9 +1872,31 @@ let CAF='all';
 const plr=(n,a,b,c)=>{const m=n%100,k=n%10;return m>10&&m<20?c:k===1?a:k>1&&k<5?b:c};
 function shareAd(id){const u=location.href.split('#')[0]+'#/ad/'+id;if(navigator.share){navigator.share({title:'ДелоЕсть',url:u}).catch(()=>{});return}try{navigator.clipboard.writeText(u).then(()=>toast('Ссылка скопирована','ok'),()=>prompt('Скопируйте ссылку',u))}catch(e){prompt('Скопируйте ссылку',u)}}
 const amini=(id,t,x,pay,city)=>{const im=x&&x.imgs&&x.imgs[0],go=x&&(x.status||'open')==='open'?` onclick="show('${id}')"`:'',pv=x?adPay(x):pay;return `<div class="amini"${go}><span class="am-th">${im?`<img src="${IMG(im,120)}" alt="" loading="lazy">`:ico(x?cic(x.category):'box')}</span><span class="am-tx"><b>${esc(t)}</b>${pv||city?`<span class="am-m">${pv?`<span class="pay sm${payC(pv)}">${payH(pv)}</span>`:''}${city?`<span class="mu">${esc(city)}</span>`:''}</span>`:''}</span>${go?'<i>›</i>':''}</div>`};
-const myCard=a=>{const im=a.imgs&&a.imgs[0],op=a.status==='open',hid=a.status==='hidden',upd=+a.upd||+a.ts,old=op&&Date.now()-upd>14*864e5,sc=({open:['Активно','ok'],closed:['Снято','mu'],hidden:['Скрыто','er']})[a.status]||[a.status,'mu'],go1=op?` onclick="show('${a.id}')"`:'',bt=(t,ic,fn,cl)=>`<button type="button" class="btn mib${cl?' '+cl:''}" title="${t}" aria-label="${t}" onclick="${fn}">${ico(ic)}<span>${t}</span></button>`;return `<article class="card ad2 myc" data-ci="${Math.max(0,CN.indexOf(a.category))%6}"><div class="cth${im?'':' ph'}"${go1}>${im?`<img src="${IMG(a.imgs[0],300)}" alt="" loading="lazy">${a.imgs.length>1?`<span class="cn">${ico('camera')}${a.imgs.length}</span>`:''}`:ico(cic(a.category))}</div><div class="cbd"${go1}><div class="chd"><div class="ctg"><span class="tag ${a.type===TYPES[0]?'w':'s'}">${esc(a.type)}</span>${a.urgent?'<span class="tag urg">Срочно</span>':''} ${cchip(a.category)}</div></div><div class="pay${payC(adPay(a))}">${payH(adPay(a))}</div><h4>${esc(a.title)}</h4><div class="mu cmeta">${ico('pin')}<span class="cml">${esc(locStr(a))||'Город не указан'}</span>${dstB(a)}<span class="cmt"> · ${dtS(a.up||a.ts)}</span></div></div><div class="mft"><div class="mst"><span class="st2 ${sc[1]}">${sc[0]}</span><span class="mu sm2">Обновлено ${dtS(upd)}</span><span class="mss"><span title="Просмотры">${ico('eye')}${a.opens||0}</span><span title="Открыли телефон">${ico('phone')}${a.views||0}</span></span></div>${old?`<div class="rnw"><span>Ещё актуально? Без подтверждения объявление снимется через ${Math.max(1,30-Math.floor((Date.now()-upd)/864e5))} дн.</span><button class="btn sm pri" onclick="adAct('renew','${a.id}','Объявление продлено')">Да</button></div>`:''}<div class="mbt">${op||hid?bt('Изменить','edit',`editAd('${a.id}')`):''}${op?bt('Снять','eyeoff',`st('${a.id}','closed')`,'dg'):''}${!op&&!hid?bt('Опубликовать','pub',`st('${a.id}','open')`,'ok'):''}${op?bt(a.urgent?'Без «Срочно»':'Срочно','spark',`adAct('urgent','${a.id}','${a.urgent?'Метка снята':'Метка «Срочно» на 3 дня'}',${a.urgent?'false':'true'})`,a.urgent?'on':'')+bt('Поделиться','nodes',`shareSheet('${a.id}')`):''}${!op&&!hid?bt('Удалить','trash',`delAd('${a.id}')`,'dg'):''}</div></div></article>`};
+const myCard=a=>{const im=a.imgs&&a.imgs[0],op=a.status==='open',hid=a.status==='hidden',upd=+a.upd||+a.ts,sc=({open:['Активно','ok'],closed:['Снято','mu'],hidden:['Скрыто','er']})[a.status]||[a.status,'mu'];
+return `<article class="card ad2 myc" data-ci="${Math.max(0,CN.indexOf(a.category))%6}">
+<div class="cth${im?'':' ph'}" onclick="show('${a.id}')">${im?`<img src="${IMG(a.imgs[0],300)}" alt="" loading="lazy">`:ico(cic(a.category))}</div>
+<div class="cbd" onclick="show('${a.id}')">
+  <div class="ctg"><span class="tag ${a.type===TYPES[0]?'w':'s'}">${esc(a.type)}</span> ${cchip(a.category)}</div>
+  <div class="pay${payC(adPay(a))}">${esc(adPay(a))}</div>
+  <h4>${esc(a.title)}</h4>
+  <div class="mu cmeta"><span class="cml">${esc(locStr(a))||'Город не указан'}</span><span class="cmt">· ${dtS(a.up||a.ts)}</span></div>
+</div>
+<div class="mft own-pan">
+  <div class="mst"><span class="st2 ${sc[1]}">${sc[0]}</span><span class="mu sm2" style="margin-left:8px">Обновлено ${dtS(upd)}</span><span class="mss"><span title="Просмотры">${ico('eye')}${a.opens||0}</span><span title="Открыли телефон">${ico('phone')}${a.views||0}</span></span></div>
+  <div class="row2">
+    ${op||hid?`<button type="button" class="btn" onclick="editAd('${a.id}')">${ico('edit')}Изменить</button>`:''}
+    ${op?`<button type="button" class="btn" style="color:var(--dng)" onclick="st('${a.id}','closed')">${ico('eyeoff')}Снять</button>`:''}
+    ${!op&&!hid?`<button type="button" class="btn" style="color:var(--ok)" onclick="st('${a.id}','open')">${ico('pub')}Опубликовать</button>`:''}
+    ${!op&&!hid?`<button type="button" class="btn" style="color:var(--dng)" onclick="delAd('${a.id}')">${ico('trash')}Удалить</button>`:''}
+  </div>
+  ${op?`<div class="row2">
+    <button type="button" class="btn" onclick="adAct('bump','${a.id}','Поднято в поиске')">${ico('arrow')}Поднять</button>
+    <button type="button" class="btn${a.urgent?' on':''}" onclick="adAct('urgent','${a.id}','${a.urgent?'Метка снята':'Срочно на 3 дня'}',${a.urgent?'false':'true'})">${ico('spark')}Срочно</button>
+  </div>`:''}
+</div>
+</article>`};
 async function adAct(a,id,msg,on){try{await api(a,{id,on});ADF=false;toast(msg);vCab()}catch(e){}}
-function cabStats(){const t=(CJ&&CJ.stats)||{};return `<div class="cstat"><div><b>${t.views||0}</b><span>просмотров</span></div><div><b>${t.resp||0}</b><span>откликов</span></div><div><b>${t.done||0}</b><span>выполнено</span></div>${t.since?`<p class="mu sm2">${sinceL(t.since)}</p>`:''}</div>`}
+function cabStats(){const t=(CJ&&CJ.stats)||{};return `<div class="cstat"><div>${ico('eye')}<b>${t.views||0}</b><span>просмотров</span></div><div>${ico('mail')}<b>${t.resp||0}</b><span>откликов</span></div><div>${ico('check')}<b>${t.done||0}</b><span>выполнено</span></div></div>`}
 function cabFill(){const L=[['Имя',!!(U.name||'').trim(),"CT='set';drawCab()"],['Фото',!!U.avatar,"CT='set';drawCab()"],['Телефон',!!U.phone,"CT='set';drawCab()"],['Первое объявление',!!((CJ&&CJ.ads)||[]).length,"go('new')"]],d=L.filter(x=>x[1]).length,m=L.filter(x=>!x[1]);if(!m.length)return'';return `<div class="cfill" role="button" tabindex="0" onclick="${m[0][2]}"><b>Профиль заполнен на ${Math.round(d*100/L.length)}%</b><div class="bar"><i style="width:${d*100/L.length}%"></i></div><span class="mu sm2">Добавьте: ${m.map(x=>x[0].toLowerCase()).join(', ')}</span></div>`}
 
 function profCard(){const r=(i,t,v,k)=>`<div class="prow" role="button" tabindex="0" aria-label="Изменить: ${t}" onclick="profEdit('${k}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();profEdit('${k}')}"><span class="prl">${ico(i)}<span><small>${t}</small><b>${esc(v||'—')}</b></span></span><span class="pch" aria-hidden="true">›</span></div>`;return `<div class="it">${r('user','Имя',U.name,'name')}${r('mail','Почта',U.login.includes('@')?U.login:'','email')}${r('phone','Телефон',U.phone?fp(U.phone):'','phone')}</div>`}
